@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbarStile sticky-top container-fluid text-white">
+    <div class="collapse navbar-collapse d-flex justify-content-between navbar-nav" id="navbarNav">
+        <div class="nav-item">
+            <a class="nav-link active" [routerLink]="['/']" aria-current="page" [routerLinkActive]="['active']">
+                <img src="">
+            </a>
+        </div>
+        <div class="nav-item d-flex justitfy-content-center">
+            <a [routerLink]="['/admin/trabajador']" class="nav-link">TRABAJADOR</a>
+            <a [routerLink]="['/pedido']" class="nav-link">CATEGORIA</a>
+            <a [routerLink]="['/pedido']" class="nav-link">PEDIDO</a>
+            <a [routerLink]="['/admin/cliente']" class="nav-link">CLIENTE</a>
+        </div>
+        <button type="button" class="btn btn-outline-dark" (click)="cerrarSesion()" style="color: aliceblue;">Cerrar
+            Sesion</button>
+        <app-modal-admin [admin]="admin"></app-modal-admin>
+    </div>
+</nav>
