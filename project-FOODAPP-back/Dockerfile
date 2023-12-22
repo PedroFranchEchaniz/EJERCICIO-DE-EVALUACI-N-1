@@ -1,10 +1,10 @@
 FROM maven:3.9-eclipse-temurin-17-alpine as build
 WORKDIR /workspace/app
-COPY mvnw .
+COPY .mvn .
 COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
-RUN ./mvnw install -DskipTests
+RUN ./.mvn install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 FROM amazoncorretto:17-alpine
 VOLUME /tmp
